@@ -23,3 +23,43 @@ body {
   .site-header .navbar-nav .nav-link.active {
     font-weight: 500;
   }
+
+  /* PROFILE */
+  .content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 2px solid #942b24;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .account-img {
+    border: 2px solid #942b24;
+  }
+
+  /* CARDS */
+  .card {
+    border-radius: 50px;
+    border: 2px solid #942b24;
+  }
+
+  .card-img-top {
+    border-top-left-radius: 48px;
+    border-top-right-radius: 48px;
+  }
+
+  .btn-primary {
+    border-radius: 15px;
+    background: #da3e33;
+    border: 2px solid #942b24;
+    transition-duration: 0.3s;
+    width: 100px; 
+    margin: 0 auto;
+    display: block;
+    
+  }
+
+  .btn-primary:hover {
+    background-color: rgb(243, 142, 142); /* Green */
+    color: #7c312b;
+    border: 2px solid #da3e33;
+  }

@@ -7,4 +7,3 @@ def home(request):
         'lodges': Lodge.objects.all()
     }
     return render(request, 'lodgment/home.html', context)
-# Create your views here.
