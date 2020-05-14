@@ -1,0 +1,18 @@
+
+{% extends "lodgment/base.html" %}
+{% block content %}
+    {% for lodge in lodges %}
+      <div class="col-auto mb-3">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ lodge.image.url }}">
+            <div class="card-body">
+              <h5 class="card-title"><a href="#">{{ lodge.address }}, {{ lodge.postal_code }}</a></h5>
+              <a class="mr-2" href="#">{{ lodge.owner }}</a>
+              <p class="card-text">Lodges: {{ lodge.lodged_nb }}/{{ lodge.total_nb }}</p>
+              <p class="card-text">Info: {{ lodge.information }}</p>
+              <a href="#" class="btn btn-primary">See</a>
+            </div>
+        </div>
+      </div>
+    {% endfor %}
+{% endblock content %}
