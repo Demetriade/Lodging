@@ -1,23 +1,36 @@
+:root {
+  --color-navbar: #da3e33;
+  --color-text-navbar: #cbd5db;
+  --color-text-hover-navbar: #ffffff;
+  --color-border: #942b24;
+  --color-hover: #7c312b;
+  --color-background-hover: #f38e8e;
+  --color-background-body: #fafafa;
+  --color-text: #333333;
+  --color-h-text: #444444;
+  --color-background-profile: #ffffff;
+}
+
 body {
-    background: #fafafa;
-    color: #333333;
+    background: var(--color-background-body);
+    color: var(--color-text);
     margin-top: 5rem;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    color: #444444;
+    color: var(--color-h-text);
   }
   
   .bg-steel {
-    background-color: #da3e33;
+    background-color: var(--color-navbar);
   }
   
   .site-header .navbar-nav .nav-link {
-    color: #cbd5db;
+    color: var(--color-text-navbar);
   }
   
   .site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
+    color: var(--color-text-hover-navbar);
   }
   
   .site-header .navbar-nav .nav-link.active {
@@ -26,20 +39,20 @@ body {
 
   /* PROFILE */
   .content-section {
-    background: #ffffff;
+    background: var(--color-background-profile);
     padding: 10px 20px;
-    border: 2px solid #942b24;
+    border: 2px solid var(--color-border);
     border-radius: 20px;
     margin-bottom: 20px;
   }
   .account-img {
-    border: 2px solid #942b24;
+    border: 2px solid var(--color-border);
   }
 
   /* CARDS */
   .card {
     border-radius: 50px;
-    border: 2px solid #942b24;
+    border: 2px solid var(--color-border);
   }
 
   .card-img-top {
@@ -49,8 +62,8 @@ body {
 
   .btn-primary {
     border-radius: 15px;
-    background: #da3e33;
-    border: 2px solid #942b24;
+    background: var(--color-navbar);
+    border: 2px solid var(--color-border);
     transition-duration: 0.3s;
     width: 100px; 
     margin: 0 auto;
@@ -59,7 +72,7 @@ body {
   }
 
   .btn-primary:hover {
-    background-color: rgb(243, 142, 142); /* Green */
-    color: #7c312b;
-    border: 2px solid #da3e33;
+    background-color: var(--color-background-hover);
+    color: var(--color-hover);
+    border: 2px solid var(--color-navbar);
   }
