@@ -1,0 +1,23 @@
+{% extends "lodgment/base.html" %}
+{% block content %}
+<main role="main" class="container">
+  <div class="content-section">
+      <div class="media">
+          <img class="rounded-circle account-img" src="{{ object.image.url }}" width="200" height="200">
+          <div class="media-body">
+              <h2 class="account-heading">{{ object.address }}, {{ object.postal_code }}</h2>
+              <p class="text-secondary">Owner: <a href="#">{{ object.owner }}</a></p>
+              <p class="text-secondary">Lodges: {{ object.lodged_nb }}/{{ object.total_nb }}</p>
+              <p class="text-secondary">{{ object.information }}</p>
+              {% if object.owner == user %}
+                <div>
+                  <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'lodge-update' object.id %}">Update</a>
+                  <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'lodge-delete' object.id %}">Delete</a>
+                </div>
+              {% endif %}
+          </div>
+      </div>
+  </div>
+  <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'lodgment-home' %}">Back</a>
+</main>
+{% endblock content %}

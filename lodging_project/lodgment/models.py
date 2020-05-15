@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
         
 class Lodge(models.Model):
@@ -13,3 +14,6 @@ class Lodge(models.Model):
 
     def __str__(self):
         return self.address
+
+    def get_absolute_url(self):
+        return reverse('lodge-detail', kwargs={'pk' : self.pk})
