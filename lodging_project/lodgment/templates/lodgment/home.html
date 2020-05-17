@@ -3,28 +3,30 @@
 <div class="container mt-4">
   <div class="row">
     {% for lodge in lodges %}
-      <div class="col-auto mb-3">
-        <div class="card h-100" style="width: 18rem;">
-            <img class="card-img-top" src="{{ lodge.image.url }}">
-            <div class="card-body">
-              <h5 class="card-title"><a href="{% url 'lodge-detail' lodge.id %}">{{ lodge.address }}, {{ lodge.postal_code }}</a></h5>
-              <p class="card-text">Owner: <a class="mr-2" href="#">{{ lodge.owner }}</a></p>
-              <p class="card-text">Lodges: {{ lodge.lodged_nb }}/{{ lodge.total_nb }}</p>
-              <p class="card-text">{{ lodge.information }}</p>
-              <a href="{% url 'lodge-detail' lodge.id %}" class="btn btn-primary">See</a>
-            </div>
+        <div class="col-auto mb-3">
+          <div class="card h-100" style="width: 18rem;">
+              <img class="card-img-top" src="{{ lodge.image.url }}">
+              <div class="card-body">
+                <h5 class="card-title"><a href="{% url 'lodge-detail' lodge.id %}">{{ lodge.address }}, {{ lodge.postal_code }}</a></h5>
+                <p class="card-text">Owner: <a class="mr-2" href="#">{{ lodge.owner }}</a></p>
+                <p class="card-text">Lodges: {{ lodge.lodged_nb }}/{{ lodge.total_nb }}</p>
+                <p class="card-text">{{ lodge.information }}</p>
+                <a href="{% url 'lodge-detail' lodge.id %}" class="btn btn-primary">See</a>
+              </div>
+          </div>
         </div>
-      </div>
     {% endfor %}
-    <div class="col-auto mb-3">
-      <div class="card h-100" style="width: 18rem;">
-        <img class="card-img-top" src="media/default_lodge_pic.jpg">
-        <div class="card-body">
-          <p class="card-text">Click here to add a new lodgment</p>
-          <a href="{% url 'lodge-create' %}" class="btn btn-primary">Add</a>
+    {% if user.is_owner %}
+        <div class="col-auto mb-3">
+          <div class="card h-100" style="width: 18rem;">
+            <img class="card-img-top" src="media/default_lodge_pic.jpg">
+            <div class="card-body">
+              <p class="card-text">Click here to add a new lodgment</p>
+              <a href="{% url 'lodge-create' %}" class="btn btn-primary">Add</a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+    {% endif %}
   </div>
 </div>
 {% endblock content %}
